@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+}
+.add-restaurant{
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+
+}
+
