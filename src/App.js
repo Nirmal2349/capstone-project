@@ -9,14 +9,13 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import FormGroup from "@mui/material/FormGroup";
+import Checkbox from "@mui/material/Checkbox";
+import { DesktopTimePicker } from "@mui/x-date-pickers/DesktopTimePicker";
 
 export default function App() {
   return (
     <div className="App">
-      {/* <Loginform /> */}
-      {/* <Register/> */}
-      {/* <Addrestaurant /> */}
       <Typetimings />
     </div>
   );
@@ -181,34 +180,69 @@ function Addrestaurant() {
 function Typetimings() {
   return (
     <div className="typetiming">
-      <h2>Restaurant Type & Timings</h2>
-      <h5>Establishment type</h5>
-      <FormControl>
-        <FormLabel id="demo-radio-buttons-group-label">
-          Select most relevant category for your restaurant type
-        </FormLabel>
-        <RadioGroup
-          aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="female"
-          name="radio-buttons-group"
-        >
-          <FormControlLabel
-            value="female"
-            control={<Radio />}
-            label="Both, delivery and dine-in available"
-          />
-          <FormControlLabel
-            value="male"
-            control={<Radio />}
-            label="Dine-in only"
-          />
-          <FormControlLabel
-            value="other"
-            control={<Radio />}
-            label="Delivery only"
-          />
-        </RadioGroup>
-      </FormControl>
+      <Box component="div" sx={{ overflow: "auto" }}>
+        <h2>Restaurant Type & Timings</h2>
+        <h4>Establishment type</h4>
+        <FormControl>
+          <h5>Select most relevant category for your restaurant type</h5>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="female"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel
+              value="female"
+              control={<Radio />}
+              label="Both, delivery and dine-in available"
+            />
+            <FormControlLabel
+              value="male"
+              control={<Radio />}
+              label="Dine-in only"
+            />
+            <FormControlLabel
+              value="other"
+              control={<Radio />}
+              label="Delivery only"
+            />
+          </RadioGroup>
+          <h5>Select options which best describe your outlet</h5>
+          <FormGroup>
+            <FormControlLabel
+              control={<Checkbox name="Bakery" />}
+              label="Bakery"
+            />
+            <FormControlLabel control={<Checkbox name="Café" />} label="Café" />
+            <FormControlLabel
+              control={<Checkbox name="restaurant" />}
+              label="restaurant"
+            />
+            <FormControlLabel
+              control={<Checkbox name="icecream" />}
+              label="Ice Cream Shop"
+            />
+
+            <h5>Select options which best describe your outlet</h5>
+            <FormControlLabel
+              control={<Checkbox name="Biryani" />}
+              label="Biryani"
+            />
+            <FormControlLabel
+              control={<Checkbox name="Fast Food" />}
+              label="Fast Food"
+            />
+            <FormControlLabel
+              control={<Checkbox name="Chinese" />}
+              label="Chinese"
+            />
+            <FormControlLabel
+              control={<Checkbox name="South Indian" />}
+              label="South Indian"
+            />
+            <h5>Restaurant operational hours</h5>
+          </FormGroup>
+        </FormControl>
+      </Box>
     </div>
   );
 }
